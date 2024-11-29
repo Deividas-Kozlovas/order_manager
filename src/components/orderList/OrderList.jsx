@@ -1,7 +1,7 @@
 import { useState } from "react";
 import OrderItem from "../orderItem/OrderItem";
 
-const OrderList = ({ orders }) => {
+const OrderList = ({ orders, setOrders }) => {
   const [filterStatus, setFilterStatus] = useState("all");
 
   const filteredOrders = orders.filter((order) =>
@@ -17,7 +17,12 @@ const OrderList = ({ orders }) => {
       </select>
 
       {filteredOrders.map((order) => (
-        <OrderItem key={order.id} order={order} />
+        <OrderItem
+          key={order.id}
+          order={order}
+          setOrders={setOrders}
+          orders={orders}
+        />
       ))}
     </div>
   );

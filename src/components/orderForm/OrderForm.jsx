@@ -7,6 +7,11 @@ const OrderFunction = ({ orders, setOrders }) => {
   const addOrder = (e) => {
     e.preventDefault();
 
+    if (orderInput.trim() === "") {
+      alert("Add order input");
+      return;
+    }
+
     const newOrder = {
       id: id,
       title: orderInput,
@@ -16,6 +21,7 @@ const OrderFunction = ({ orders, setOrders }) => {
     setId((prewId) => prewId + 1);
 
     setOrders([...orders, newOrder]);
+    setOrderInput("");
   };
 
   const inputChange = (e) => {
