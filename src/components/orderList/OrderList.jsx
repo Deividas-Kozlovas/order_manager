@@ -1,13 +1,13 @@
-import OrederItem from "./orderItem/OrederItem";
+import OrderItem from "../orderItem/OrderItem";
 
-const OrderList = (title) => {
-    return(
-        <div>
-            <OrederItem />
-            {title}
-            {Map.orders((map) => (<p>map</p>))}
-        </div>
-    )
-}
+const OrderList = ({ orders }) => {
+  return (
+    <div>
+      {orders.map((order) => (
+        <OrderItem key={order.id} order={order} /> 
+      ))}
+    </div>
+  );
+};
 
 export default OrderList;

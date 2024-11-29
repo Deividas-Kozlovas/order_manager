@@ -1,6 +1,6 @@
 import './App.scss'
 import OrderForm from "../orderForm/OrderForm";
-import OrderList from "../orderItem/OrderItem";
+import OrderList from "../orderList/OrderList";
 import { useState } from 'react';
 
 function App() {

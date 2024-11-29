@@ -1,13 +1,12 @@
-const OrderList = ({ title, orders }) => {
+const OrderItem = ({ order }) => {
     return (
       <div>
-        <p>{title}</p>
-        {orders.map((order, index) => (
-          <p key={index}>{order}</p> 
-        ))}
+        <p>{order.id}</p> 
+        <p>{order.title}</p> 
+        <p>{order.status}</p> 
       </div>
     );
   };
   
-  export default OrderList;
+  export default OrderItem;
   

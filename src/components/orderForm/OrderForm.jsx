@@ -2,10 +2,21 @@ import { useState } from "react";
 
 const OrderFunction = ({orders, setOrders}) => {
   const[orderInput, setOrderInput] = useState("");
-  
+  const[id,setId] = useState(1);
+
   const addOrder = (e) => {
     e.preventDefault(); 
-    setOrders([...orders, orderInput])}
+
+   const newOrder = {
+    id: id,
+    title: orderInput,
+    status: "all"
+  }
+
+  setId((prewId) => prewId + 1);
+    
+  setOrders([...orders, newOrder])
+  }
 
   const inputChange = (e) => {
     setOrderInput(e.target.value);
