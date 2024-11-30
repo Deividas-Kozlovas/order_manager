@@ -7,7 +7,7 @@ function App() {
   const [orders, setOrders] = useState([]);
 
   return (
-    <div>
+    <div className="app">
       <OrderForm orders={orders} setOrders={setOrders} />
       <OrderList orders={orders} setOrders={setOrders} />
     </div>
